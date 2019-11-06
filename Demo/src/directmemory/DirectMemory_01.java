@@ -13,7 +13,7 @@ import java.nio.channels.FileChannel;
 public class DirectMemory_01 {
     static final String FROM="D:\\视频\\浙江大学C语言程序设计课程\\1.1 计算机和编程语言\\1.1.1 计算机和编程语言.flv";
     static final String CLONE = "D:\\视频\\a.flv";
-    static final int SIZE=1024*1024;
+    static final int SIZE_1M=1024*1024;
     public static void main(String[] args) {
         byteBuffer();
         io();
@@ -24,7 +24,7 @@ public class DirectMemory_01 {
         try ( FileChannel from = new FileInputStream(FROM).getChannel();
               FileChannel clone = new FileOutputStream(CLONE).getChannel();)
         {
-            ByteBuffer byteBuffer = ByteBuffer.allocateDirect(SIZE);//直接内存缓存
+            ByteBuffer byteBuffer = ByteBuffer.allocateDirect(SIZE_1M);//直接内存缓存
             while (true){
                 int length = from.read(byteBuffer);
                 if(length == -1){
@@ -49,7 +49,7 @@ public class DirectMemory_01 {
         try(FileInputStream from = new FileInputStream(FROM);
             FileOutputStream clone = new FileOutputStream(CLONE);)
         {
-            byte [] bytes = new byte[SIZE];//java缓存
+            byte [] bytes = new byte[SIZE_1M];//java缓存
             while (true){
                 int length = from.read(bytes);
                 if(length == -1){
