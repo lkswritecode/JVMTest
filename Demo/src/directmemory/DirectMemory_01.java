@@ -24,7 +24,7 @@ public class DirectMemory_01 {
         try ( FileChannel from = new FileInputStream(FROM).getChannel();
               FileChannel clone = new FileOutputStream(CLONE).getChannel();)
         {
-            ByteBuffer byteBuffer = ByteBuffer.allocateDirect(SIZE);
+            ByteBuffer byteBuffer = ByteBuffer.allocateDirect(SIZE);//直接内存缓存
             while (true){
                 int length = from.read(byteBuffer);
                 if(length == -1){
@@ -49,7 +49,7 @@ public class DirectMemory_01 {
         try(FileInputStream from = new FileInputStream(FROM);
             FileOutputStream clone = new FileOutputStream(CLONE);)
         {
-            byte [] bytes = new byte[SIZE];
+            byte [] bytes = new byte[SIZE];//java缓存
             while (true){
                 int length = from.read(bytes);
                 if(length == -1){
