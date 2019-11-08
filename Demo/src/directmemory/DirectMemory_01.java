@@ -11,8 +11,8 @@ import java.nio.channels.FileChannel;
  * ByteBuffer
  */
 public class DirectMemory_01 {
-    static final String FROM="D:\\视频\\浙江大学C语言程序设计课程\\1.1 计算机和编程语言\\1.1.1 计算机和编程语言.flv";
-    static final String CLONE = "D:\\视频\\a.flv";
+    static final String FROM="D:";
+    static final String CLONE = "D:";
     static final int SIZE_1M=1024*1024;
     public static void main(String[] args) {
         byteBuffer();
