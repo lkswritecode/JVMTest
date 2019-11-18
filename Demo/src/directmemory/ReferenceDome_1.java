@@ -49,7 +49,7 @@ public class ReferenceDome_1 {
     private void  strong_Reference(){
         List<byte[]> list = new ArrayList<>();
         for (int i = 0;i<5;i++){
-            byte [] bytes = new byte[4*1024*1024];
+            byte [] bytes = new byte[4];
             list.add(bytes);
             System.out.println(list.size());
         }
@@ -97,7 +97,8 @@ public class ReferenceDome_1 {
     }
 
     /**
-     * 虚引用
+     * 虚引用 一般是调用本地方法（native）时JVM是使用
+     *       因为JVM的垃圾回收无法回收非JVM管理的系统内存
      */
     private  void phantom_Reference(){
         Object o1 = new Object();
