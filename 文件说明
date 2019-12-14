@@ -1,0 +1,9 @@
+Demo
+  lib   --需要导入的包
+  notes --笔记
+  src
+    classloadtest  --类加载器测试
+    directmemoy    --JVM 4种引用测试
+    JMM            --JVM内存模型测试
+    sort           --排序算法
+    springbeantest --spring生命周期测试
