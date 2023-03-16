@@ -3,4 +3,14 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="TestBean" init-method="init"  destroy-method="destroy" scope="singleton" class="springbeanTest.TestBean"></bean>
+
+    <bean id="beanPostProcessor" class="springbeanTest.MyBeanPostProcessor"></bean>
+
+    <!--配置instantiationAwareBeanPostProcessor-->
+    <bean id="instantiationAwareBeanPostProcessor" class="springbeanTest.MyInstantiationAwareBeanPostProcessor">
+    </bean>
+
+    <!--配置BeanFactory的后置处理器-->
+    <bean id="beanFactoryPostProcessor" class="springbeanTest.MyBeanFactoryPostProcessor"></bean>
 </beans>
